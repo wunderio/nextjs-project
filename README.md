@@ -7,7 +7,7 @@ Next.js starter kit for Wunder projects.
 - [ ] Ready to be deployed to [Silta](https://github.com/wunderio/silta)
 - [ ] TypeScript setup
 - [ ] Prettier, ESLint, husky and lint-staged
-- [ ] Env files 
+- [ ] Env files
 ## Getting started
 
 1. Click [Use this template](https://github.com/wunderio/nextjs-project/generate) to generate a new project.
@@ -21,6 +21,10 @@ Next.js starter kit for Wunder projects.
 6. Log in to CircleCI using your Github account and add the new project using existing config.
 
 For additional instructions, please see the [Silta documentation](https://github.com/wunderio/silta).
+
+## System requirements
+
+- Node.js 10.13 or later, like [Next.js](https://nextjs.org/docs#system-requirements)
 
 ## Local development
 
