@@ -13,16 +13,9 @@ workflows:
           name: Silta build & deploy
           context: silta_dev
           silta_config: silta/silta.yml
-          release-suffix: frontend-test
           codebase-build:
             # npm-install-build command is defined here https://github.com/wunderio/silta-circleci/blob/master/orb/commands/@npm.yml
             - silta/npm-install-build
-          image_build_steps:
-            - silta/build-docker-image:
-                dockerfile: "silta/node.Dockerfile"
-                path: "."
-                identifier: "node"
-                docker-hash-prefix: v6
           filters:
             branches:
               ignore: production
@@ -33,12 +26,6 @@ workflows:
           name: Silta build & deploy production
           context: silta_finland
           silta_config: silta/silta.yml,silta/silta-prod.yml
-          image_build_steps:
-            - silta/build-docker-image:
-                dockerfile: "silta/node.Dockerfile"
-                path: "."
-                identifier: "node"
-                docker-hash-prefix: v6
           filters:
             branches:
               only: production
