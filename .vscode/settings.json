@@ -1,7 +1,4 @@
 {
-  // https://stackoverflow.com/questions/61731587/prettier-doesnt-format-tsx-file
-  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   // explicitly tell eslint extension to watch typescript files for linting errors
   "eslint.validate": ["typescript", "typescriptreact"],
   "editor.codeActionsOnSave": {
