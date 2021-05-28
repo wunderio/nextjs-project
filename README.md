@@ -4,10 +4,12 @@ Next.js starter kit for Wunder projects.
 
 ## Features
 
-- [ ] Ready to be deployed to [Silta](https://github.com/wunderio/silta)
-- [ ] TypeScript setup
-- [ ] Prettier, ESLint, husky and lint-staged
+- [x] Ready to be deployed to [Silta](https://github.com/wunderio/silta)
+- [x] TypeScript setup
+- [x] Prettier, ESLint
+- [ ] husky and lint-staged
 - [ ] Env files
+
 ## Getting started
 
 1. Click [Use this template](https://github.com/wunderio/nextjs-project/generate) to generate a new project.
