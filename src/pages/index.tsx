@@ -1,4 +1,6 @@
+import Welcome from "@/components/welcome";
+
 function HomePage(): JSX.Element {
-  return <div>Welcome to Next.js!</div>;
+  return <Welcome showCarrot />;
 }
 export default HomePage;
