@@ -3,10 +3,66 @@ version: 2.1
 orbs:
   silta: silta/silta@0.1
 
+images:
+  - &node
+    image: circleci/node:12.16.1-browsers
+
+executors:
+  node:
+    docker:
+      - *node
+
+jobs:
+  build:
+    executor: node
+    steps:
+      - checkout:
+          path: ~/project/build_path
+      - restore_cache:
+          key: v1-circleci-nextjs-project-{{ .Branch }}-{{ .Revision }}
+      - run:
+          name: Install Dependencies
+          command: cd build_path && npm install
+      - run:
+          name: Build
+          command: cd build_path && npm run build
+
+      # Cache node_modules for tests.
+      - save_cache:
+          key: v1-circleci-nextjs-project-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - build_path
+
+  unit-test:
+    docker:
+      - image: circleci/node:12.16.1-browsers
+    resource_class: large
+    steps:
+      - checkout
+      - restore_cache:
+          key: v1-circleci-nextjs-project-{{ .Branch }}-{{ .Revision }}
+      - run:
+          name: Jest tests
+          command: cd build_path && npm run test:unit
+      - store_artifacts:
+          path: ~/project/build_path/src/tests/__image_snapshots__/__diff_output__
+          destination: diff_output
+      - run:
+          name: Update image snapshots when tests fails
+          command: cd build_path && npm run test:unit -- -u
+          when: on_fail
+      - store_artifacts:
+          path: ~/project/build_path/src/tests/__image_snapshots__
+          destination: image_snapshots
+
 workflows:
   version: 2
   commit:
     jobs:
+      - build
+      - unit-test:
+          requires:
+            - build
       # silta/frontend-build-deploy is defined here https://github.com/wunderio/silta-circleci/blob/master/orb/jobs/%40frontend.yml
       # &build-deploy is a yaml anchor, so we can reference it later
       - silta/frontend-build-deploy: &frontend-build-deploy

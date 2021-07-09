@@ -36,7 +36,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest",
+    "test:unit": "jest",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
