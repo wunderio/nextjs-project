@@ -7,5 +7,6 @@ import {
 describe("The Home Page", () => {
   it("successfully loads homepage", () => {
     cy.visit("/");
+    cy.matchImageSnapshot();
   });
 });

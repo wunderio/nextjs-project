@@ -1,14 +1,7 @@
 /// <reference types="cypress" />
-// const { initPlugin } = require("cypress-plugin-snapshots/plugin");
+import { addMatchImageSnapshotPlugin } from "cypress-image-snapshot/plugin";
 
-// module.exports = (on, config) => {
-//   initPlugin(on, config);
-//   return config;
-// };
-
-// import { initPlugin } from "cypress-plugin-snapshots/plugin";
-
-// export default (on, config) => {
-//   initPlugin(on, config);
-//   return config;
-// };
+export default (on, config) => {
+  addMatchImageSnapshotPlugin(on, config);
+  return config;
+};
