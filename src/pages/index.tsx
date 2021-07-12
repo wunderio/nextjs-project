@@ -1,4 +1,4 @@
-import Welcome from "@/components/welcome";
+import Welcome from "@/components/welcome/welcome";
 
 function HomePage(): JSX.Element {
   return <Welcome />;

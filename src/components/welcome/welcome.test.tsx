@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { generateImage } from "jsdom-screenshot";
-import Welcome from "@/components/welcome";
+import Welcome from "@/components/welcome/welcome";
 
 test("should render text", () => {
   const { rerender, getByText } = render(<Welcome />);
