@@ -1,12 +1,15 @@
-import {
-  smallBreakpoint,
-  mediumBreakpoint,
-  largeBreakpoint,
-} from "@/utils/constants";
+import { breakpointList } from "@/utils/constants";
 
-describe("The Home Page", () => {
-  it("successfully loads homepage", () => {
+describe("Home page", () => {
+  it("should successfully load", () => {
     cy.visit("/");
-    cy.matchImageSnapshot();
+  });
+
+  breakpointList.forEach((width) => {
+    it(`should match current snapshot ('${width}px' viewport width)`, () => {
+      cy.viewport(width, 1080);
+      cy.visit(`/`);
+      cy.matchImageSnapshot();
+    });
   });
 });

@@ -1,3 +1,3 @@
-export const smallBreakpoint = 640;
-export const mediumBreakpoint = 768;
+export const smallBreakpoint = 480;
 export const largeBreakpoint = 1024;
+export const breakpointList = [smallBreakpoint, largeBreakpoint];

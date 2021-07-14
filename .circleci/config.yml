@@ -46,14 +46,14 @@ jobs:
           command: cd build_path && npm run test:jest
       - store_artifacts:
           path: ~/project/build_path/jest/snapshots/diff_output
-          # destination: jest/diff_output
+          destination: jest/snapshots/diff_output
       - run:
           name: Update image snapshots when tests fails
           command: cd build_path && npm run test:jest:update
           when: on_fail
       - store_artifacts:
           path: ~/project/build_path/jest/snapshots/current_output
-          # destination: jest/image_snapshots
+          destination: jest/snapshots/current_output
   cypress:
     docker:
       - image: circleci/node:12.16.1-browsers
@@ -78,17 +78,17 @@ jobs:
           command: cd build_path && npm run test:cypress:run
       - store_artifacts:
           path: ~/project/build_path/cypress/screenshots
-          # destination: cypress/screenshots
+          destination: cypress/screenshots
       - store_artifacts:
           path: ~/project/build_path/cypress/snapshots/diff_output
-          # destination: cypress/diff_output
+          destination: cypress/snapshots/diff_output
       - run:
           name: Update image snapshots when tests fails
           command: cd build_path && npm run test:cypress:run:update
           when: on_fail
       - store_artifacts:
           path: ~/project/build_path/cypress/snapshots/current_output
-          # destination: cypress/image_snapshots
+          destination: cypress/snapshots/current_output
           
 workflows:
   version: 2
