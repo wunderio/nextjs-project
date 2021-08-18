@@ -5,7 +5,7 @@ export interface Properties {
 function Welcome({ showCarrot }: Properties): JSX.Element {
   return (
     <p>
-      Welcome hello to Next.js! Hello
+      Welcome to Next.js!
       {showCarrot && " 🥕"}
     </p>
   );
