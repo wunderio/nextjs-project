@@ -5,8 +5,12 @@
 /.pnp
 .pnp.js
 
-# testing
-/coverage
+# testing image snapshot diffs
+/cypress/snapshots/diff_output
+/jest/snapshots/diff_output
+
+# cypress screenshots
+/cypress/screenshots
 
 # next.js
 /.next/
