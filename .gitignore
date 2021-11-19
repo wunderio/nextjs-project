@@ -7,7 +7,7 @@
 
 # testing image snapshot diffs
 /cypress/snapshots/diff_output
-/jest/snapshots/diff_output
+/tests/jest/snapshots/diff_output
 
 # cypress screenshots
 /cypress/screenshots

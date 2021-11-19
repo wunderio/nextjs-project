@@ -1,7 +1,7 @@
 module.exports = {
   verbose: true,
   testEnvironment: "jsdom",
-  setupFilesAfterEnv: ["<rootDir>/jest/jest.setup.ts"],
+  setupFilesAfterEnv: ["<rootDir>/tests/jest/jest.setup.ts"],
   testPathIgnorePatterns: [
     "<rootDir>/cypress/",
     "<rootDir>/.next/",

@@ -8,8 +8,8 @@ setDefaultOptions({
 });
 
 const toMatchImageSnapshot = configureToMatchImageSnapshot({
-  customSnapshotsDir: "jest/snapshots/current_output",
-  customDiffDir: "jest/snapshots/diff_output",
+  customSnapshotsDir: "tests/jest/snapshots/current_output",
+  customDiffDir: "tests/jest/snapshots/diff_output",
 });
 
 expect.extend({ toMatchImageSnapshot });

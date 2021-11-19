@@ -20,12 +20,12 @@ jobs:
           path: ~/project/build_path
       - restore_cache:
           keys:
-            - v1-circleci-nextjs-dependecies-{{ .Branch }}-{{ .Revision }}
+            - v1-circleci-nextjs-dependencies-{{ .Branch }}-{{ .Revision }}
       - run:
           name: Install Dependencies
           command: cd build_path && npm ci
       - save_cache:
-          key: v1-circleci-nextjs-dependecies-{{ .Branch }}-{{ .Revision }}
+          key: v1-circleci-nextjs-dependencies-{{ .Branch }}-{{ .Revision }}
           paths:
             - ~/.npm
             - ~/.cache
@@ -37,23 +37,23 @@ jobs:
       - checkout:
           path: ~/project/build_path
       - restore_cache:
-          key: v1-circleci-nextjs-dependecies-{{ .Branch }}-{{ .Revision }}
+          key: v1-circleci-nextjs-dependencies-{{ .Branch }}-{{ .Revision }}
       - run:
-          name: Install dependecies
+          name: Install dependencies
           command: cd build_path && npm ci
       - run:
           name: Jest tests
           command: cd build_path && npm run test:jest
       - store_artifacts:
-          path: ~/project/build_path/jest/snapshots/diff_output
-          destination: jest/snapshots/diff_output
+          path: ~/project/build_path/tests/jest/snapshots/diff_output
+          destination: tests/jest/snapshots/diff_output
       - run:
           name: Update image snapshots when tests fails
           command: cd build_path && npm run test:jest:update
           when: on_fail
       - store_artifacts:
-          path: ~/project/build_path/jest/snapshots/current_output
-          destination: jest/snapshots/current_output
+          path: ~/project/build_path/tests/jest/snapshots/current_output
+          destination: tests/jest/snapshots/current_output
   cypress:
     docker:
       - image: circleci/node:12.16.1-browsers
@@ -62,9 +62,9 @@ jobs:
       - checkout:
           path: ~/project/build_path
       - restore_cache:
-          key: v1-circleci-nextjs-dependecies-{{ .Branch }}-{{ .Revision }}
+          key: v1-circleci-nextjs-dependencies-{{ .Branch }}-{{ .Revision }}
       - run:
-          name: Install dependecies
+          name: Install dependencies
           command: cd build_path && npm ci
       - run:
           name: Build application

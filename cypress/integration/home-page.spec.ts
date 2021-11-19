@@ -1,4 +1,4 @@
-import { breakpointList } from "@/utils/constants";
+import { breakpointList } from "../../tests/test-utils/constants";
 
 describe("Home page", () => {
   it("should successfully load", () => {
