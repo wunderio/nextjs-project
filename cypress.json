@@ -1,0 +1,8 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "testFiles": "**/*.*spec.*",
+  "ignoreTestFiles": ["**/snapshots/*"],
+  "pluginsFile": "cypress/plugins/index.ts",
+  "supportFile": "cypress/support/index.ts",
+  "video": false
+}
