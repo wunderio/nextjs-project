@@ -35,6 +35,15 @@ For additional instructions, please see the [Silta documentation](https://github
 2. Run the NextJS app in development mode:  
    `npm run dev`
 
+## Linting
+
+Run "npm run lint" and it will show if there are any errors.
+
+## Linting for Windows users
+
+1. Make sure you have LF selected as line ending in your editor.
+2. If point 1 is not enough, try this command "git config --global core.autocrlf false".More info here https://stackoverflow.com/questions/25724969/sourcetree-line-ending-issue
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
