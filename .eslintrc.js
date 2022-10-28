@@ -29,18 +29,10 @@ module.exports = {
         browser: true,
         node: true,
       },
-      plugins: [
-        "@typescript-eslint",
-        "jsx-a11y",
-        "simple-import-sort",
-        "react",
-      ],
+      plugins: ["@typescript-eslint", "simple-import-sort"],
       extends: [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended",
-        "plugin:react-hooks/recommended",
-        "plugin:jsx-a11y/recommended",
         "next",
         "prettier",
       ],
@@ -66,7 +58,6 @@ module.exports = {
             ],
           },
         ],
-        "simple-import-sort/exports": "error",
 
         // Allow unused variables that start with an underscore.
         "no-unused-vars": "off",
