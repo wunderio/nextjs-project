@@ -1,5 +1,5 @@
 
-FROM wunderio/silta-node:v0.1
+FROM wunderio/silta-node:latest
 
 COPY . /app
 

@@ -1,4 +1,5 @@
-function HomePage(): JSX.Element {
-  return <div>Welcome to Next.js!</div>;
+import { Hello } from "@/components/Hello";
+
+export default function HomePage() {
+  return <Hello />;
 }
-export default HomePage;
