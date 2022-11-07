@@ -21,12 +21,13 @@ Next.js starter kit for Wunder projects.
      - See [values](https://github.com/wunderio/charts/blob/master/drupal/values.yaml) to override.
    - package.json
 6. Log in to CircleCI using your Github account and add the new project using existing config.
+7. After confirming the starter template is working as expected, developers are encouraged to update dependencies and keep them as up to date as possible throughout the lifetime of the project.
 
 For additional instructions, please see the [Silta documentation](https://github.com/wunderio/silta).
 
 ## System requirements
 
-- Node.js 10.13 or later, like [Next.js](https://nextjs.org/docs#system-requirements)
+- System requirements are the same as the [Next.js requirements](https://nextjs.org/docs#system-requirements) for the version you are using.
 
 ## Local development
 
