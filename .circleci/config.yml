@@ -4,9 +4,9 @@ orbs:
   silta: silta/silta@0.1
 
 executors:
-  cicd16:
+  cicd18:
     docker:
-      - image: wunderio/silta-cicd:circleci-php8.1-node16-composer2
+      - image: wunderio/silta-cicd:circleci-php8.2-node18-composer2-v0.2
 
 workflows:
   version: 2
@@ -16,7 +16,7 @@ workflows:
       # &build-deploy is a yaml anchor, so we can reference it later
       - silta/frontend-build-deploy: &frontend-build-deploy
           name: Silta build & deploy
-          executor: cicd16
+          executor: cicd18
           context: silta_dev
           silta_config: silta/silta.yml
           codebase-build:
@@ -32,7 +32,7 @@ workflows:
           # Extend the build-deploy configuration for the production environment.
           <<: *frontend-build-deploy
           name: Silta build & deploy production
-          executor: cicd16
+          executor: cicd18
           context: silta_finland
           silta_config: silta/silta.yml,silta/silta-prod.yml
           filters:
@@ -42,7 +42,7 @@ workflows:
       - silta/frontend-build-deploy:
           <<: *frontend-build-deploy
           name: Build Dependabot
-          executor: cicd16
+          executor: cicd18
           context: silta_dev
           skip-deployment: true
           filters:
