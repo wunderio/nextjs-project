@@ -14,7 +14,7 @@ module.exports = {
     },
   },
   plugins: ["prettier"],
-  extends: ["eslint:recommended", "prettier"],
+  extends: ["eslint:recommended", "next", "prettier"],
   rules: {
     "prettier/prettier": "error",
   },
@@ -29,11 +29,12 @@ module.exports = {
         browser: true,
         node: true,
       },
-      plugins: ["@typescript-eslint", "simple-import-sort"],
+      plugins: ["simple-import-sort"],
       extends: [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "next",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@next/next/recommended",
         "prettier",
       ],
       rules: {
@@ -43,7 +44,12 @@ module.exports = {
         "@typescript-eslint/ban-ts-comment": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-unsafe-argument": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-return": "off",
+        "@typescript-eslint/restrict-template-expressions": "off",
 
         // Sort imports.
         "simple-import-sort/imports": [
@@ -51,8 +57,8 @@ module.exports = {
           {
             groups: [
               ["^\\u0000"], // Side effect imports.
-              ["^next", "^react", "^@?\\w"], // Packages. Put `next`/`react`-related packages first.
-              ["^@/(components|lib)(/.*|$)"], // Internal paths - change these to match your project structure defined in tsconfig.json.
+              ["^next", "^@next", "^react", "^@?\\w"], // Packages. Put `next`/`react`-related packages first.
+              ["^@/(components|lib|pages)(/.*|$)"], // Internal paths - change these to match your project structure defined in tsconfig.json.
               ["^\\.\\.(?!/?$)", "^\\.\\./?$"], // Parent imports. Put `..` last.
               ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"], // Other relative imports. Put same-folder imports and `.` last.
             ],
