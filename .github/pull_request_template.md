@@ -28,6 +28,6 @@ This project must support WCAG accessibility level AA <em>(edit this according t
 - Test responsiveness, scaling and text reflow.
 - Make sure no accessibility issues exist on either desktop or mobile views.
 
-You can find further testing instructions in the Accessibility Testing Cheat Sheet on Intra.
+You can find further testing instructions in the [Accessibility Testing Cheat Sheet](https://intra.wunder.io/info/accessibility-group/accessibility-testing-cheat-sheet) on Intra.
 </p>
 </details>
