@@ -1,12 +1,12 @@
 version: 2.1
 
 orbs:
-  silta: silta/silta@0.1
+  silta: silta/silta@1
 
 executors:
   cicd18:
     docker:
-      - image: wunderio/silta-cicd:circleci-php8.2-node18-composer2-v0.2
+      - image: wunderio/silta-cicd:circleci-php8.2-node18-composer2-v1
 
 workflows:
   version: 2
