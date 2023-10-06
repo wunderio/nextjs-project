@@ -17,6 +17,9 @@
   "directories": {
     "doc": "docs"
   },
+  "engines": {
+    "node": "18"
+  },
   "scripts": {
     "build": "next build",
     "dev": "next dev",
@@ -26,24 +29,21 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "next": "^13.4.9",
+    "next": "^13.5.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "~18",
     "@types/react": "~18",
-    "@typescript-eslint/eslint-plugin": "^5.56.0",
-    "@typescript-eslint/parser": "^5.56.0",
-    "eslint": "^8.44.0",
-    "eslint-config-next": "^13.4.9",
-    "eslint-config-prettier": "^8.8.0",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint": "^8.50.0",
+    "eslint-config-next": "^13.5.4",
+    "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "prettier": "^3.0.0",
-    "typescript": "~5.0.4"
-  },
-  "engines": {
-    "node": "18"
+    "prettier": "^3.0.3",
+    "typescript": "~5.1"
   }
 }
