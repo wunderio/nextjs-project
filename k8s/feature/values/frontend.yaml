@@ -1,0 +1,15 @@
+---
+# Helm values for the frontend chart — feature/PR environments.
+#
+# Image tags are updated by CI via wunderio/silta-actions/update-image-tags.
+# Tag format: {branch-normalized}-{timestamp}-{sha}
+#
+# UPDATE: Change image repository paths to match your Harbor project name.
+
+services:
+  node:
+    image:
+      repository: registry.wdr.io/CHANGEME/node
+      tag: placeholder-00000000T000000-0000000
+    exposedRoute: "/"
+    port: 3000
